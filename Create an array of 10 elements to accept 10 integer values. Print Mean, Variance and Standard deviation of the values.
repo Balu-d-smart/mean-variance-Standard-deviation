@@ -1,0 +1,37 @@
+import java.util.Scanner;
+import java.io.*;
+class Main {
+    void mean(int arr[],int n)
+    {int sum=0 ,avg=0;
+         for(int i=0;i<n;i++)
+        {sum+=arr[i];
+        }
+        avg=sum/n;
+    System.out.println("Mean = " + avg);
+        double variance = 0;
+for (int i = 0; i <n; i++) 
+{
+    variance += Math.pow(arr[i] - avg, 2);
+}
+variance /= n;
+ System.out.println("variance = " + variance);
+double std = Math.sqrt(variance);
+System.out.println("std = " + std);
+    }
+    public static void main(String[] args) 
+    {
+        Main obj= new Main();
+    int[] arr= new int[10];
+    int i=0;
+    System.out.println(" enter the number of element in array  : ");
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        System.out.println(" enter the array list  : ");
+        for( i=0;i<n;i++)
+        { 
+     arr[i]=sc.nextInt();
+        }
+              System.out.println("the arrray list is  : ");
+      obj.mean(arr,n);       
+      }
+}
